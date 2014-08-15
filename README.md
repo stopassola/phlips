@@ -5,7 +5,7 @@
 
 ##Motivation
 The current version of PHLIPS (0.5.1) unfortunately not compiled in new versions of PHP - releases 5.4.x and 5.5.x.
-![](https://www.github.com/stopassola/phlips.git/README_images/PHLIPS_errors.png)    
+![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_errors.png)    
 I make little adjusts on source clips.c to working again.
 
 ##Install
@@ -52,7 +52,7 @@ phpinfo();
 ?>
 ```
 You should view the clips extension:
-![](https://www.github.com/stopassola/phlips.git/README_images/PHLIPS_phpini.png) 
+![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_phpini.png) 
 
 ###8. Test some _expert system_ code:
 ```php
