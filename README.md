@@ -38,14 +38,17 @@ If you have multiple PHP versions installed, you may be able to specify for whic
 ###4. Build module clips.so from source code
 `sudo make`
 
-PS.: tested on version 5.5.3 of PHP (running on MAMP 2.2).
+PS.: tested on version 5.5.3 of PHP (running on MAMP 2.2) and PHP 5.5.10 (on MAMP 3.0.5).
 
 ###5. Copy the _clips.so_ module to MAMP repository:
 `cp modules/clips.so /Applications/MAMP/bin/php/php5.5.3/lib/php/extensions/no-debug-non-zts-20121212/`
 
-###6. Restart the webserver
+###6. Load the CLIPS extension (clips.so) in php.ini (configuration file of PHP)
+`extension=clips.so`
 
-###7. Check if extension was install
+###7. Restart the webserver
+
+###8. Check if extension was install
 ```php
 <?php
 phpinfo();
@@ -54,7 +57,7 @@ phpinfo();
 You should view the clips extension:
 ![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_phpini.png) 
 
-###8. Test some _expert system_ code:
+###9. Test some _expert system_ code:
 ```php
 <?php
 clips_clear();
