@@ -29,16 +29,39 @@ PHP Api Version:         20121113
 Zend Module Api No:      20121212
 Zend Extension Api No:   220121212
 ```
+***
+####Error: autoconf utility not available
+```
+Configuring for:
+PHP Api Version:         20121113
+Zend Module Api No:      20121212
+Zend Extension Api No:   220121212
+Cannot find autoconf. Please check your autoconf installation and the
+$PHP_AUTOCONF environment variable. Then, rerun this script.
+```
+Install the autoconf in your **Linux** distro and repeat the last command:
+`sudo apt-get install autoconf`
 
 ###3. Specify the installation of PHP
 If you have multiple PHP versions installed, you may be able to specify for which installation you'd like to build by using the --with-php-config option during configuration:
 
 `./configure --with-php-config=/Applications/MAMP/bin/php/php5.5.3/bin/php-config`
 
+***
+####Error: C compiler is not available 
+```
+checking for gcc... no
+configure: error: in `/home/zend/phlips':
+configure: error: no acceptable C compiler found in $PATH
+See `config.log' for more details.
+```
+Install compiler utilities on your **Linux** distro and repeat the last command:
+`sudo apt-get install build-essential`
+
 ###4. Build module clips.so from source code
 `sudo make`
 
-PS.: tested on version 5.5.3 of PHP (running on MAMP 2.2) and PHP 5.5.10 (on MAMP 3.0.5).
+PS.: tested on version 5.5.3 of PHP (running on MAMP 2.2), PHP 5.5.10 (on MAMP 3.0.5) and PHP 5.5.7 (on ZendServer Enterprise 6.3.0 running in Debian GNU/Linux 6.0.9 "squeeze").
 
 ###5. Copy the _clips.so_ module to MAMP repository:
 `cp modules/clips.so /Applications/MAMP/bin/php/php5.5.3/lib/php/extensions/no-debug-non-zts-20121212/`
