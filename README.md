@@ -40,6 +40,7 @@ Cannot find autoconf. Please check your autoconf installation and the
 $PHP_AUTOCONF environment variable. Then, rerun this script.
 ```
 Install the autoconf in your **Linux** distro and repeat the last command:
+
 `sudo apt-get install autoconf`
 
 ###3. Specify the installation of PHP
@@ -56,9 +57,10 @@ configure: error: no acceptable C compiler found in $PATH
 See `config.log' for more details.
 ```
 Install compiler utilities on your **Linux** distro and repeat the last command:
+
 `sudo apt-get install build-essential`
 
-###4. Build module clips.so from source code
+###4. Build module _clips.so_ from source code
 `sudo make`
 
 PS.: tested on version 5.5.3 of PHP (running on MAMP 2.2), PHP 5.5.10 (on MAMP 3.0.5) and PHP 5.5.7 (on ZendServer Enterprise 6.3.0 running in Debian GNU/Linux 6.0.9 "squeeze").
@@ -70,6 +72,9 @@ PS.: tested on version 5.5.3 of PHP (running on MAMP 2.2), PHP 5.5.10 (on MAMP 3
 `extension=clips.so`
 
 ###7. Restart the webserver
+`sudo /usr/local/zend/bin/apachectl restart`
+
+(command above tested in ZendServer Enterprise 6.3.0 running in Debian GNU/Linux 6.0.9 "squeeze")
 
 ###8. Check if extension was install
 ```php
