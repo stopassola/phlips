@@ -80,9 +80,9 @@ Make sure that you run '/Applications/MAMP/bin/php/php5.6.10/bin/phpize' in the 
 
 #####2.4 Fatal error: 'php.h' file not found
 
-![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_phpize_error.png)
+![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_sudo_make_error.png)
 
-If you see the follow message, it's because your PHP instalation not have the source code of PHP (current release):
+If you see the follow message, it's because your PHP installation not have the source code of PHP's current release like so:
 
 ![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_phpize_error.png)
 
@@ -121,6 +121,8 @@ and
           ^
 1 error generated.
 ```
+
+#####2.5 PHP environment is ready!
 
 ![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_PHP_install.png)
 
