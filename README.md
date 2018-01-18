@@ -1,25 +1,25 @@
-#PHLIPS - CLIPS extension for PHP
+# PHLIPS - CLIPS extension for PHP
 
-##Original repository
+## Original repository
 [http://phlips.sourceforge.net](http://phlips.sourceforge.net)
 
-##Motivation
+## Motivation
 The current version of PHLIPS (0.5.1) unfortunately not compiled in new versions of PHP - releases 5.4.x, 5.5.x and 5.6.x.
 ![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_errors.png)    
 I make little adjusts on source clips.c to working again.
 
-##Install
+## Install
 PS.: this tutorial is based on [MAMP version 3.4](http://www.mamp.info) (acronym for Mac + Apache + MySQL + PHP), running on OS X 10.11 El Capitan.
 
 PS.: I tested on version 5.5.3 of PHP (running on MAMP 2.2 running on OS X 10.9 Mavericks), PHP 5.5.10 (on MAMP 3.0.5 on OSX 10.10 Yosemite) and PHP 5.5.7 (on ZendServer Enterprise 6.3.0 running in Debian GNU/Linux 6.0.9 "squeeze").
 
-###1. Download
+### 1. Download
 ```
 git clone https://github.com/stopassola/phlips.git
 cd phlips
 ```
 
-###2. Prepare the build environment for a PHP extension
+### 2. Prepare the build environment for a PHP extension
 `/Applications/MAMP/bin/php/php5.6.10/bin/phpize`
 
 More information in [http://php.net/manual/en/install.pecl.phpize.php](http://php.net/manual/en/install.pecl.phpize.php)
@@ -32,7 +32,7 @@ Zend Module Api No:      20121212
 Zend Extension Api No:   220121212
 ```
 ***
-####Error: autoconf utility not available
+#### Error: autoconf utility not available
 ```
 Configuring for:
 PHP Api Version:         20121113
@@ -42,13 +42,13 @@ Cannot find autoconf. Please check your autoconf installation and the
 $PHP_AUTOCONF environment variable. Then, rerun this script.
 ```
 
-#####2.1 Linux
+##### 2.1 Linux
 
 Install the autoconf in your **Linux** distro:
 
 `sudo apt-get install autoconf`
 
-#####2.2 OS X
+##### 2.2 OS X
 
 Open **Terminal** and execute the follow commands:
 
@@ -64,7 +64,7 @@ export PHP_AUTOCONF=/usr/local/bin/autoconf
 ```
 PS.: the `autoconf-x.yy` shoud be replaced by current version of autoconf. In my case: `autoconf-2.69`
 
-#####2.3 Repeat the last command
+##### 2.3 Repeat the last command
 
 ```
 cd ../phlips/
@@ -78,7 +78,7 @@ Cannot find config.m4.
 Make sure that you run '/Applications/MAMP/bin/php/php5.6.10/bin/phpize' in the top level source directory of the module
 ```
 
-#####2.4 Fatal error: 'php.h' file not found
+##### 2.4 Fatal error: 'php.h' file not found
 
 ![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_sudo_make_error.png)
 
@@ -122,11 +122,11 @@ and
 1 error generated.
 ```
 
-#####2.5 PHP environment is ready!
+##### 2.5 PHP environment is ready!
 
 ![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_PHP_install.png)
 
-###3. Specify the installation of PHP
+### 3. Specify the installation of PHP
 If you have multiple PHP versions installed, you may be able to specify for which installation you'd like to build by using the --with-php-config option during configuration:
 
 ```
@@ -135,7 +135,7 @@ cd phlips_source_directory
 ```
 
 ***
-####Error: C compiler is not available 
+#### Error: C compiler is not available 
 ```
 checking for gcc... no
 configure: error: in `/home/zend/phlips':
@@ -149,21 +149,21 @@ Install compiler utilities on your **Linux** distro and repeat the last command:
 In **OSX** make sure to install the Xcode with command line:
 `xcode-select --install`
 
-###4. Build module _clips.so_ from source code
+### 4. Build module _clips.so_ from source code
 `sudo make`
 
-###5. Copy the _clips.so_ module to MAMP repository:
+### 5. Copy the _clips.so_ module to MAMP repository:
 `cp modules/clips.so /Applications/MAMP/bin/php/php5.6.10/lib/php/extensions/no-debug-non-zts-20131226/`
 
-###6. Load the CLIPS extension (clips.so) in php.ini (configuration file of PHP)
+### 6. Load the CLIPS extension (clips.so) in php.ini (configuration file of PHP)
 `extension=clips.so`
 
-###7. Restart the webserver
+### 7. Restart the webserver
 `sudo /usr/local/zend/bin/apachectl restart`
 
 (command above tested in ZendServer Enterprise 6.3.0 running in Debian GNU/Linux 6.0.9 "squeeze")
 
-###8. Check if extension was install
+### 8. Check if extension was install
 ```php
 <?php
 phpinfo();
@@ -174,7 +174,7 @@ You should view the clips extension:
 
 ![](https://github.com/stopassola/phlips/blob/master/README_images/PHLIPS_phpini.png) 
 
-###9. Test some _expert system_ code:
+### 9. Test some _expert system_ code:
 ```php
 <?php
 clips_clear();
